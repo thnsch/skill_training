@@ -1,2 +1,2 @@
-# skill_training
+# training
 Training scripts
