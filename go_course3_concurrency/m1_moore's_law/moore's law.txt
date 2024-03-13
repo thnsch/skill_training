@@ -1,0 +1,20 @@
+
+Moore's Law
+"Transistor density would double every two years."
+
+Problems:
+- Norman Bottleneck
+    Memory has high latency.
+- Power/temperature problem
+    Increased amount of transistors leads to increased power consumption and therefore higher templerature.
+- Dynamic power
+    Power consumption is increasing with 
+        higher clock-frequency
+        high distance voltage swing (lower distance voltage swing reduces power consumption)
+        smaller transistors switching faster
+- Dennard Scaling 
+    Power leakage isn't considered.
+    Voltage must stay above a threshold. It can't be scaled to low.
+    Noise problems occur.
+- Multi-core
+    To improve performance with a constant capacity of a single core. 
