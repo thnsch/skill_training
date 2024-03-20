@@ -1,7 +1,0 @@
----
-- name: Use a galaxy role to install apache
-  hosts: linux2
-  become: True
-
-  roles:
-    - { role: mariuszczyz.centos_apache, tags: ['centos_apache'] }
