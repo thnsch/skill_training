@@ -1,0 +1,7 @@
+---
+- name: Conditions and Handlers
+  hosts: linux2
+  become: true
+
+  roles:
+    - users

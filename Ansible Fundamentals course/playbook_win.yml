@@ -1,0 +1,41 @@
+---
+- name: Some Windows tasks
+  hosts: win2
+  vars:
+    myDir: 'D:\temp-ts'
+    myLocFile: '/etc/motd'
+    myFile1: 'D:\temp-ts\by-ansible.txt'
+    myFile2: 'D:\temp-ts\by-ansible-copy.txt'
+  
+  tasks:
+    - name: Create a directory
+      win_file:
+        path: "{{ myDir }}"
+        state: directory
+#       state: absent
+
+    - name: Debug
+      debug:
+        msg: "{{ vars['myDir'] }}"
+
+
+    - name: Copy a local file to remote
+      win_copy:
+        src: "{{ myLocFile }}"
+        dest: "{{ myDir }}"
+
+
+    - name: Create an empty file on remote
+      win_file:
+        path: "{{ myFile1 }}"
+        state: touch 
+#       state: absent
+  
+    - name: Copy a file
+      win_copy:
+        remote_src: yes
+        src: "{{ myFile1 }}"
+        dest: "{{ myFile2 }}"
+
+        
+        

@@ -1,0 +1,13 @@
+---
+- name: Users present or absent with loop
+  hosts: linux2
+  become: true
+
+  tasks:
+    - name: Create or remove users
+      user:
+        name: "{{ item }}"
+        password: "{{ password_loop }}"
+        state: absent
+      loop: "{{ db_users }}"
+      
