@@ -1,0 +1,33 @@
+
+
+[linux1]
+ts-redhat      # 10.0.0.4, ansible
+
+[linux2]
+ts-redhat-2    # 10.0.0.7
+
+[linux:children]
+linux1
+linux2
+
+[linux:vars]
+ansible_user=ts
+#ansible_private_key_file=/home/ansible.ssh/...
+#ansible_connection=ssh
+
+[win1]
+ts-srv   # 10.0.0.5
+
+[win2]
+ts-srv-2016   # 10.0.0.6
+
+[windows:children]
+win1
+win2
+
+[windows:vars]
+ansible_user="svc-ansible"
+ansible_password="..."
+ansible_connection=winrm
+ansible_winrm_transport=credssp
+ansible_winrm_server_cert_validation=ignore

@@ -1,0 +1,8 @@
+---
+# handlers file for users
+
+#  handlers:
+    - name: Print message
+      debug:
+        msg: "Handler 'Print message' was notified. :)"
+
